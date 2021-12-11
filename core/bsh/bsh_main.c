@@ -9,16 +9,14 @@
 #include "bsh_exec.c"
 
 
-// Provide Coloured Prompt for when
-// COLOURS is defined
-
-
 char *getcwd(char *buf, size_t size);
 
 int main(int argc, char **argv)
 {
 
+	#ifdef SHOW_WELCOME
 	bsh_welcome();
+	#endif
 	bsh_loop();
 	return EXIT_SUCCESS;
 }

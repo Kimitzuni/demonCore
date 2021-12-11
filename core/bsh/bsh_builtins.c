@@ -6,7 +6,6 @@ int bsh_help();
 int bsh_exit();
 int bsh_license();
 int bsh_welcome();
-int bsh_versionInfo();
 
 char *builtin_str[] = {
   "cd",
@@ -45,7 +44,6 @@ int bsh_cd(char** args)
 int bsh_help()
 {
   printf("\n");
-  printf(".................................\n");
   printf("A Painfully POSIX Compliant Shell\n");
   printf("\n");
 
@@ -55,25 +53,16 @@ int bsh_help()
   printf("licenseinfo ........... Display License Info\n");
   printf("\n");
 
-  printf("bsh Source Code <https://github.com/Kimitzuni/bsh>\n");
-  printf("Pull Requests <https://github.com/Kimitzuni/bsh/pulls>\n");
-  printf("Submit Patches to <mailto:rtw@null.net>\n\n");
+  printf("demonCore Source Code <https://github.com/Kimitzuni/demonCore>\n");
   #else
   printf("\033[1;92mhelp\033[0m        ........... Display this help\n");
   printf("\033[1;92mlicenseinfo\033[0m ........... Display License Info\n");
   printf("\n");
 
-  printf("bsh Source Code <\033[1;93mhttps://github.com/Kimitzuni/bsh\033[0m>\n");
-  printf("Pull Requests <\033[1;93mhttps://github.com/Kimitzuni/bsh/pulls\033[0m>\n");
-  printf("Submit Patches to <\033[1;96mmailto:rtw@null.net\033[0m>\n\n");
+  printf("demonCore Source Code <\033[1;93mhttps://github.com/Kimitzuni/demonCore\033[0m>\n");
   #endif
 
   return 1;
-}
-
-int bsh_versionInfo()
-{
-  printf("bsh Version %s\n", VERSION_NUMBER);
 }
 
 int bsh_license()

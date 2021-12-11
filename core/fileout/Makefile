@@ -4,7 +4,7 @@ all: build
 
 
 build:
-	@gcc userview.c -o userview $(CFLAGS)
+	@gcc fileout.c -o fileout $(CFLAGS)
 
 clean:
-	@rm userview
+	@rm fileout
