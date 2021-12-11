@@ -8,5 +8,8 @@ These are replacements for the GNU Core Utilities
 > [demonCore Userview](core/userview) \
 > A Replacement for GNU's *whoami*, written in 40 Lines of Code
 
+> [Fileout](core/fileout) \
+> A Replacement for 'cat'
+
 > [bsh](core/bsh) \
 > A Replacement for BASH, and a painfully POSIX Compliant shell written in C
