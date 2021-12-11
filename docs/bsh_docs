@@ -1,0 +1,52 @@
+===========================================================================
+                  bsh - A Painfully POSIX Compliant Shell
+===========================================================================
+
+bsh is now part of the demonCore Utilities, all further development on bsh
+will happen in this repository. The old repository will remain open for 
+archival reasons.
+
+Old bsh Repository: <https://github.com/Kimitzuni/bsh>
+
+===========================================================================
+Contents
+-----+-----------------
+1.   | About bsh
+ 1.1 | Building bsh
+ 1.2 | Issues with bsh
+2.   | License
+-----+-----------------
+
+====] 1. About bsh [=======================================================
+bsh is a painfully POSIX Compliant shell, written in C as more of a proof
+of concept rather than an actual shell that you should use, as there are 
+bugs and issues with it.
+
+========] 1.1 Building bsh [===============================================
+You can build bsh by using the Makefile, either in the demonCore root or in
+the core/bsh directory. If you choose the demonCore makefile, you'll need
+to run
+
+	make createDir bsh
+
+If you want to change your CFLAGS from the defaults "-Os -pipe -Wall", you
+can simply add 'CFLAGS=".......' to the make command:
+
+	make createDir bsh CFLAGS="-O3 -march=native......
+
+Or if you want to do it manually, by entering the GCC command manuall, you
+would run this
+
+	gcc core/bsh/bsh_main.c -o bsh [CFLAGS]
+
+Replace "[CFLAGS]" with your CFLAGS, such as "-Os" etc.
+
+========] 1.2 Issues with bsh [============================================
+As mentioned, there are many issues with BSH. Mainly:
+
+	A) Piping into other commands isn't yet implemented
+	B) Ctrl + D doesn't exit.
+
+====] 2. License [=========================================================
+bsh, as well as all the programs in the demonCore Repository, are licensed
+under the GNU General Public License version 2
