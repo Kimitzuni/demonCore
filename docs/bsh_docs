@@ -34,7 +34,7 @@ can simply add 'CFLAGS=".......' to the make command:
 
 	make createDir bsh CFLAGS="-O3 -march=native......
 
-Or if you want to do it manually, by entering the GCC command manuall, you
+Or if you want to do it manually, by entering the GCC command, you
 would run this
 
 	gcc core/bsh/bsh_main.c -o bsh [CFLAGS]
