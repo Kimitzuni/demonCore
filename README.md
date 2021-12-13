@@ -12,5 +12,8 @@ demonCore aims to be replacements for the GNU Core Utilities and extra programs.
 > [bsh](core/bsh) \
 > A Replacement for BASH, and a painfully POSIX Compliant shell written in C
 
+> [no](core/no) \
+> A Replacement for 'yes' - Print a string indefinitely
+
 ## Other Developer Repositories
 [InfinityFloof/demonCore](https://github.com/InfinityFloof/demonCore)
