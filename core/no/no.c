@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <stdlib.h>
+
+#define true 1
 
 int main(int argc, char **argv)
 {
