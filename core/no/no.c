@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <stdlib.h>
 
 int main(int argc, char **argv)
@@ -16,7 +15,7 @@ int main(int argc, char **argv)
 int output(int argc, char *argv[])
 {
 	int i = 1;
-	while (true)
+	while (i)
 	{
 		for (i=1; i<argc; i++)
 		{

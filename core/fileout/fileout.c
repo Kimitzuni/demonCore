@@ -3,17 +3,14 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define VERSION "0.1.5"
+#define VERSION "0.1.6"
 
 int main(int argc, char *argv[100])
 {
-  char c;
-  FILE *readfile;
-
   if (argc == 1)
   {
     printf("fileout: no filename provided\n");
-  } else if (argc == 2) {
+  } else if (argc > 2) {
     
     if(strcmp(argv[1], "--help") == 0 ||
        strcmp(argv[1], "-h") == 0)
@@ -22,24 +19,36 @@ int main(int argc, char *argv[100])
       exit(0);
 
     }
-    readfile = fopen(argv[1], "r");
+    printOut(argc, argv);
+  }
+}
 
+int printOut(int argc, char **argv)
+{
+  char c;
+  int i = 1;
+  FILE* readfile;
+
+  while (i < argc)
+  {
+    readfile = fopen(argv[i], "r");
     if (readfile == NULL)
     {
-      printf("fileout: %s does not exist\n", argv[1]);
-      exit(0);
+      printf("fileout: %s doesn't exist\n", argv[i]);
     }
-
+      
     c = fgetc(readfile);
     while (c != EOF)
     {
-        printf("%c", c);
-        c = fgetc(readfile);
+      printf("%c", c);
+      c = fgetc(readfile);
     }
-    
     fclose(readfile);
-    return 0;
+    printf("\n");
+    i++;
   }
+    return 0;
+    
 }
 int help()
 {

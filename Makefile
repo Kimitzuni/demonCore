@@ -2,13 +2,13 @@ CFLAGS 		= -Os -pipe -w
 BUILD		= build
 CC		= gcc
 
-all: info createDir userview bsh fileout no
+all: info createDir userview bsh fileout no cwd truefalse proc
 
 info:
 	@echo ""
-	@echo "Build Directory:  $(BUILD)/"
-	@echo "CFLAGS:           $(CFLAGS)"
-	@echo "Compiler:         $(CC)"
+	@echo "BUILD     $(BUILD)/"
+	@echo "CFLAGS    $(CFLAGS)"
+	@echo "CC        $(CC)"
 	@echo "---------------------------------"
 	@sleep 0.25
 
@@ -16,24 +16,34 @@ createDir:
 	@[ ! -d $(BUILD) ] && mkdir $(BUILD) || DIREXISTS=1
 
 userview:
-	@echo "Building 'userview'"
+	@echo " CC      userview"
 	@$(CC) core/userview/userview.c -o $(BUILD)/userview $(CFLAGS)
-	@sleep 0.25
 
 bsh:
-	@echo "Building 'bsh'"
+	@echo " CC      bsh"
 	@$(CC) core/bsh/bsh_main.c -o $(BUILD)/bsh $(CFLAGS)
-	@sleep 0.25
 
 fileout:
-	@echo "Building 'fileout'"
+	@echo " CC      fileout"
 	@$(CC) core/fileout/fileout.c -o $(BUILD)/fileout $(CFLAGS)
-	@sleep 0.25
 
 no:
-	@echo "Building 'no'"
+	@echo " CC      no"
 	@$(CC) core/no/no.c -o $(BUILD)/no $(CFLAGS)
-	@sleep 0.25
+
+cwd:
+	@echo " CC      cwd"
+	@$(CC) core/cwd/cwd.c -o $(BUILD)/cwd $(CFLAGS)
+
+proc:
+	@echo " CC      proc"
+	@$(CC) core/proc/proc.c -o $(BUILD)/proc $(CFLAGS)
+
+truefalse:
+	@echo " CC      true"
+	@$(CC) core/truefalse/true.c -o $(BUILD)/true $(CFLAGS)
+	@echo " CC      false"
+	@$(CC) core/truefalse/false.c -o $(BUILD)/false $(CFLAGS)
 
 clean:
 	rm -rvf $(BUILD)
