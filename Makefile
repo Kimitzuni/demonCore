@@ -2,7 +2,11 @@ CFLAGS 		= -Os -pipe -w
 BUILD		= build
 CC		= gcc
 
-all: info createDir userview bsh fileout no cwd truefalse proc
+all: info createDir userview bsh fileout no cwd truefalse proc \
+	out
+
+clean:
+	rm -rvf $(BUILD)
 
 info:
 	@echo ""
@@ -45,5 +49,7 @@ truefalse:
 	@echo " CC      false"
 	@$(CC) core/truefalse/false.c -o $(BUILD)/false $(CFLAGS)
 
-clean:
-	rm -rvf $(BUILD)
+out:
+	@echo " CC      out"
+	@$(CC) core/out/out.c -o $(BUILD)/out $(CFLAGS)
+
